@@ -1,4 +1,4 @@
-(ns com.timetraveltoaster.cljs-example-lib.pad
+(ns cljs-example-lib.pad
   (:require [pad :refer [default] :rename {default pad}]))
 
 (defn left-pad

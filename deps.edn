@@ -9,4 +9,24 @@
             :main-opts ["-m" "cljs-test-runner.main"
                         "-D" "doo.edn"
                         "-c" "test-build.edn"
-                        "-x" "chrome-headless"]}}}
+                        "-x" "chrome-headless"]}
+
+           :js-deps
+           {:extra-deps {com.timetraveltoaster/target-bundle-libs
+                         {:mvn/version "RELEASE"}}
+            :main-opts ["-m" "target-bundle-libs.core"]}
+
+           :uberjar
+           {:extra-deps {seancorfield/depstar {:mvn/version "1.0.94"}}
+            :main-opts ["-m" "hf.depstar.uberjar" "cljs-example-lib.jar"
+                        "-c" "-m" "cljs-example-lib.pad"]}
+
+           :install
+           {:extra-deps {deps-deploy/deps-deploy {:mvn/version "RELEASE"}}
+            :main-opts ["-m" "deps-deploy.deps-deploy" "install"
+                         "cljs-example-lib.jar"]}
+
+           :deploy
+           {:extra-deps {deps-deploy/deps-deploy {:mvn/version "RELEASE"}}
+            :main-opts ["-m" "deps-deploy.deps-deploy" "deploy"
+                        "cljs-example-lib.jar"]}}}

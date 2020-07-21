@@ -1,1 +1,1 @@
-{:npm-deps {"pad" "3.2.0"}}
+{:npm-deps {"@cljs-oss/module-deps" "^1.1.1", "pad" "^3.2.0"}}

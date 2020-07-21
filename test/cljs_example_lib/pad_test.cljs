@@ -1,6 +1,6 @@
-(ns com.timetraveltoaster.cljs-example-lib.pad-test
+(ns cljs-example-lib.pad-test
   (:require [cljs.test :refer-macros [deftest is testing run-tests]]
-            [com.timetraveltoaster.cljs-example-lib.pad :refer [left-pad right-pad]]))
+            [cljs-example-lib.pad :refer [left-pad right-pad]]))
 
 (deftest left-pad-test
   (testing "2-arity version pads with spaces"
