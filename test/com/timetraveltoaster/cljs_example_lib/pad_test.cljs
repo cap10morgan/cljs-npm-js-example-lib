@@ -4,14 +4,14 @@
 
 (deftest left-pad-test
   (testing "2-arity version pads with spaces"
-    (is (= "  foo" (left-pad "foo" 2))))
+    (is (= "  foo" (left-pad "foo" 5))))
   (testing "3-arity version pads with arg"
-    (is (= "+++bar" (left-pad "bar" "+" 3)))))
+    (is (= "+++bar" (left-pad "bar" "+" 6)))))
 
 (deftest right-pad-test
   (testing "2-arity version pads with spaces"
-    (is (= "foo  " (right-pad "foo" 2))))
+    (is (= "foo  " (right-pad "foo" 5))))
   (testing "3-arity version pads with arg"
-    (is (= "bar+++" (right-pad "bar" "+" 3)))))
+    (is (= "bar+++" (right-pad "bar" "+" 6)))))
 
 (enable-console-print!)
