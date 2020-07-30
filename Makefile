@@ -1,7 +1,7 @@
-.PHONY: test js-deps install deploy
+.PHONY: test js-deps install deploy clean
 
-cljs-example-lib.jar: deps.edn pom.xml src/**/*
-	clojure -A:uberjar
+target/cljs-example-lib.jar: deps.edn pom.xml src/**/*
+	clojure -A:jar
 
 pom.xml: deps.edn
 	clojure -Spom
@@ -14,8 +14,11 @@ js-deps: src/deps.cljs
 test:
 	clojure -A:test
 
-install: cljs-example-lib.jar pom.xml
+install: target/cljs-example-lib.jar
 	clojure -A:install
 
-deploy: cljs-example-lib.jar pom.xml
+deploy: target/cljs-example-lib.jar
 	clojure -A:deploy
+
+clean:
+	rm -rf target

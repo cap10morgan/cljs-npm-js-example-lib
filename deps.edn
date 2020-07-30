@@ -16,10 +16,9 @@
                          {:mvn/version "RELEASE"}}
             :main-opts ["-m" "target-bundle-libs.core"]}
 
-           :uberjar
+           :jar
            {:extra-deps {seancorfield/depstar {:mvn/version "1.0.94"}}
-            :main-opts ["-m" "hf.depstar.uberjar" "cljs-example-lib.jar"
-                        "-c" "-m" "cljs-example-lib.pad"]}
+            :main-opts ["-m" "hf.depstar.jar" "cljs-example-lib.jar"]}
 
            :install
            {:extra-deps {deps-deploy/deps-deploy {:mvn/version "RELEASE"}}
